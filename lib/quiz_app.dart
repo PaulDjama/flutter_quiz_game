@@ -39,19 +39,19 @@ class _QuizAppState extends State<QuizApp> {
     }
   }
 
-  void repondons(String reponse) {
-    reponsesChoisies.add(reponse);
-  }
+  // void repondons(String reponse) {
+  //   reponsesChoisies.add(reponse);
+  // }
 
-  bool verifionsSiCestFini() {
-    return reponsesChoisies.length == monQuiz.length;
-  }
+  // bool verifionsSiCestFini() {
+  //   return reponsesChoisies.length == monQuiz.length;
+  // }
 
-  void okCestVraimentFini() {
-    setState(() {
-      activecontent = 'answer-content';
-    });
-  }
+  // void okCestVraimentFini() {
+  //   setState(() {
+  //     activecontent = 'answer-content';
+  //   });
+  // }
 
   // void processusDeReponse(String reponse) {
   //   repondons(reponse);
