@@ -29,6 +29,16 @@ class _QuizAppState extends State<QuizApp> {
     });
   }
 
+  void repondre(String reponse) {
+    reponsesChoisies.add(reponse);
+
+    if (reponsesChoisies.length == monQuiz.length) {
+      setState(() {
+        activecontent = 'answer-content';
+      });
+    }
+  }
+
   void repondons(String reponse) {
     reponsesChoisies.add(reponse);
   }
@@ -43,12 +53,12 @@ class _QuizAppState extends State<QuizApp> {
     });
   }
 
-  void processusDeReponse(String reponse) {
-    repondons(reponse);
-    if (verifionsSiCestFini() == true) {
-      okCestVraimentFini();
-    }
-  }
+  // void processusDeReponse(String reponse) {
+  //   repondons(reponse);
+  //   if (verifionsSiCestFini() == true) {
+  //     okCestVraimentFini();
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +69,7 @@ class _QuizAppState extends State<QuizApp> {
     }
 
     if (activecontent == 'quiz-content') {
-      content = QuizContent(processus: processusDeReponse);
+      content = QuizContent(processus: repondre);
     }
 
     if (activecontent == 'answer-content') {
